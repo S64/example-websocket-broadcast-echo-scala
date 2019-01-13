@@ -9,7 +9,7 @@ import play.api.mvc.{AbstractController, ControllerComponents, WebSocket}
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class MyController @Inject()(cc: ControllerComponents)(implicit ec: ExecutionContext, system: ActorSystem, mat: Materializer) extends AbstractController(cc) {
+class MyController @Inject()(cc: ControllerComponents)(implicit ec: ExecutionContext, mat: Materializer) extends AbstractController(cc) {
 
   private val (mySink, mySource) = {
     val src = MergeHub.source[String]
