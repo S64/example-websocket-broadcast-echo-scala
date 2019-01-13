@@ -13,7 +13,6 @@ class MyController @Inject()(cc: ControllerComponents)(implicit ec: ExecutionCon
 
   private val (mySink, mySource) = {
     val src = MergeHub.source[String]
-      .log("source")
 
     val sink = BroadcastHub.sink[String]
 
